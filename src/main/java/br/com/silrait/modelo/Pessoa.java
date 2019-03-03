@@ -1,7 +1,9 @@
 package br.com.silrait.modelo;
 
 import java.io.Serializable;
+import java.persistence.Entity;
 
+@Entity
 public class Pessoa implements Serializable{
     private static final long serialVersionUID = 1L;
 
