@@ -1,15 +1,23 @@
 package br.com.silrait.modelo;
 
 import java.io.Serializable;
-import java.persistence.Entity;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 public class Pessoa implements Serializable{
     private static final long serialVersionUID = 1L;
 
-    private Integer id;
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private Integer id;    
     private String nome;
     private String email;
+    
+    public Pessoa() {}
 
     public Pessoa(Integer id, String nome, String email){
         this.id = id;
@@ -49,6 +57,10 @@ public class Pessoa implements Serializable{
     public void setEmail(String email) {
         this.email = email;
     }
+
+	public Integer getId() {
+		return this.id;
+	}
 
     
 }
